@@ -1,0 +1,61 @@
+<html>
+
+<body>
+    <div id="output">Loading...</div>
+</body>
+
+<div id="template" type="x-tmpl-mustache">
+    <h1>Mustache Demo</h1>
+    <ul>
+        {{#families}}
+
+        <li>Family</li>
+        {{#names}}
+        <li>Hello {{ name }}</li>
+        {{/names}}
+
+        {{/families}}
+    </ul>
+</div>
+
+<script src="https://unpkg.com/mustache@latest"></script>
+<script>
+    function renderHello() {
+        const data = {
+            "families": [
+                {
+                    "family": "Light side",
+                    "names": [
+                        { name: 'Luke' },
+                        { name: 'Leia' },
+                        { name: 'Han' }
+                    ]
+                },
+                {
+                    "family": "Dark side",
+                    "names": [
+                        { name: 'Anakin' },
+                        { name: 'Sheev' },
+                        { name: 'Maul' }
+                    ]
+                }
+            ]
+        }
+
+        const template = document.querySelector("#template").innerHTML
+        const output = document.getElementById("output")
+        const rendered = Mustache.render(template, data)
+        output.innerHTML = rendered
+    }
+
+    // After 2 seconds, render the template
+    document.addEventListener("DOMContentLoaded", () => { setTimeout(renderHello, 2000) })
+</script>
+
+<style>
+    [type="x-tmpl-mustache"] {
+        display: none;
+    }
+</style>
+
+</html>
