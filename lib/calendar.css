@@ -28,14 +28,14 @@
      height: calc(100% - 2rem);
  }
 
- .month {
+ .calendar-month {
      display: flex;
      flex-direction: column;
      width: 100%;
      height: 100%;
  }
 
- .weekdays {
+ .calendar-weekdays {
      display: flex;
      flex-direction: row;
      justify-content: space-between;
@@ -46,7 +46,7 @@
      margin: 0;
  }
 
- .weekdays li {
+ .calendar-weekdays li {
      display: flex;
      flex-direction: row;
      justify-content: center;
@@ -57,7 +57,7 @@
      font-weight: bold;
  }
 
- .days {
+ .calendar-days {
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
@@ -69,7 +69,7 @@
      margin: 0;
  }
 
- .days li {
+ .calendar-days li {
      display: flex;
      flex-direction: row;
      justify-content: center;
@@ -80,36 +80,10 @@
      font-weight: bold;
  }
 
- .days li.current-month {
+ .calendar-days li.current-month {
      color: black;
  }
 
- .days li.today {
-     background-color: red;
- }
-
- .day {
-     display: flex;
-     flex-direction: column;
-     width: 100%;
-     height: 100%;
- }
-
- .day h1 {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     height: 100%;
-     font-size: 1.5rem;
-     font-weight: bold;
- }
-
- .day h1.current-month {
-     color: black;
- }
-
- .day h1.today {
+ .calendar-days li.today {
      background-color: red;
  }
