@@ -1,0 +1,115 @@
+ [type="x-tmpl-handlebars"] {
+     display: none;
+ }
+
+ #calendar-main-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+     width: 100%;
+     height: 100%;
+ }
+
+ #calendar-main-controls {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     width: 100%;
+ }
+
+ #calendar-main-days {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: flex-start;
+     width: 100%;
+     height: calc(100% - 2rem);
+ }
+
+ .month {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+ }
+
+ .weekdays {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 100%;
+     height: 10%;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .weekdays li {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+     font-size: 1.5rem;
+     font-weight: bold;
+ }
+
+ .days {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     width: 100%;
+     height: 90%;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .days li {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: 14%;
+     height: 14%;
+     font-size: 1.5rem;
+     font-weight: bold;
+ }
+
+ .days li.current-month {
+     color: black;
+ }
+
+ .days li.today {
+     background-color: red;
+ }
+
+ .day {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+ }
+
+ .day h1 {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+     font-size: 1.5rem;
+     font-weight: bold;
+ }
+
+ .day h1.current-month {
+     color: black;
+ }
+
+ .day h1.today {
+     background-color: red;
+ }

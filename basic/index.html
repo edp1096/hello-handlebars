@@ -1,0 +1,85 @@
+<html>
+
+<body>
+    <div id="output">Loading...</div>
+</body>
+
+<template id="template" type="x-tmpl-handlebars">
+    <h1>Hello Handlebars</h1>
+    <ul>
+        {{#families}}
+
+        <li>Family: {{@index}} / {{family}}</li>
+        {{#names}}
+
+        {{#if (same @index 1)}}
+        <li onclick="alert('{{@index}}')"><b>Hello {{@index}} / {{ name }}</b></li>
+        {{else}}
+        <li>Goodbye {{@index}} / {{ name }}</li>
+        {{/if}}
+
+        {{/names}}
+
+        {{/families}}
+    </ul>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script>
+    Handlebars.registerHelper("same", (source, target, options) => {
+        console.log(options)
+        if (source == target) {
+            // return options.fn(this)
+            return true
+        } else {
+            // return options.inverse(this)
+            return false
+        }
+    })
+</script>
+
+<script>
+    const data = {
+        "families": [
+            {
+                "family": "Light side",
+                "names": [
+                    { name: 'Luke' },
+                    { name: 'Leia' },
+                    { name: 'Han' }
+                ]
+            },
+            {
+                "family": "Dark side",
+                "names": [
+                    { name: 'Anakin' },
+                    { name: 'Sheev' },
+                    { name: 'Maul' }
+                ]
+            }
+        ]
+    }
+
+    function renderHello() {
+        const output = document.getElementById("output")
+        const template = Handlebars.compile(document.querySelector("#template").innerHTML)
+
+        const rendered = template(data)
+        output.innerHTML = rendered
+    }
+
+    function init() {
+        setTimeout(renderHello, 1000)
+    }
+
+    // After 2 seconds, render the template
+    document.addEventListener("DOMContentLoaded", () => { init() })
+</script>
+
+<style>
+    [type="x-tmpl-handlebars"] {
+        display: none;
+    }
+</style>
+
+</html>

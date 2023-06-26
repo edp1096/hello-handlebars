@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Calendar</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/locale/ko.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="calendar.js"></script>
+
+    <link rel="stylesheet" href="calendar.css" />
+</head>
+
+<body>
+    <div id="calendar-main-container">
+        <div id="calendar-main-controls">
+            <select name="year" id="selector-year" onchange="moveDate()"></select>
+            <select name="month" id="selector-month" onchange="moveDate()"></select>
+            <button onclick="moveToday()">Today</button>
+
+            <button onclick="movePreviousMonth()">Previous Month</button>
+            <button onclick="moveNextMonth()">Next Month</button>
+        </div>
+
+        <div id="calendar-main-days">Loading..</div>
+    </div>
+
+    <!-- Template - Yearly selector -->
+    <template id="options-year" type="x-tmpl-handlebars">
+        {{#each years}}
+        {{#if isSelected}}
+        <option value="{{value}}" selected>{{name}}</option>
+        {{else}}
+        <option value="{{value}}">{{name}}</option>
+        {{/if}}
+        {{/each}}
+    </template>
+
+    <!-- Template - Monthly selector -->
+    <template id="options-month" type="x-tmpl-handlebars">
+        {{#each months}}
+        {{#if isSelected}}
+        <option value="{{value}}" selected>{{name}}</option>
+        {{else}}
+        <option value="{{value}}">{{name}}</option>
+        {{/if}}
+        {{/each}}
+    </template>
+
+    <!-- Template - Days in a month container -->
+    <template id="container-month" type="x-tmpl-handlebars">
+        <div class="month">
+            <ul class="weekdays">
+                {{#each weekNames}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+
+            <ul class="days">
+                {{#each days}}
+                <li class="{{#if isCurrentMonth}}current-month{{/if}} {{#if isToday}}today{{/if}}">{{day}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </template>
+</body>
+
+<script>
+    function init() {
+        initCalendar("calendar-main-days")
+    }
+
+    document.addEventListener("DOMContentLoaded", () => { init() })
+</script>
+
+</html>
