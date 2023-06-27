@@ -1,93 +1,103 @@
- [type="x-tmpl-handlebars"] {
-     display: none;
- }
+[type="x-tmpl-handlebars"] {
+    display: none;
+}
 
- #calendar-class-container {
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     align-items: flex-start;
-     width: 100%;
-     height: 100%;
- }
+#calendar-class-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
 
- #calendar-class-controls {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: center;
-     width: 100%;
- }
+#calendar-class-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
 
- #calendar-class-days {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: flex-start;
-     width: 100%;
-     height: calc(100% - 2rem);
- }
+#calendar-class-days {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100% - 1.5rem);
+}
 
- .calendar-class-month {
-     display: flex;
-     flex-direction: column;
-     width: 100%;
-     height: 100%;
- }
+.calendar-class-month {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
 
- .calendar-class-weekdays {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     width: 100%;
-     height: 10%;
-     list-style: none;
-     padding: 0;
-     margin: 0;
- }
+.calendar-class-weekdays {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
- .calendar-class-weekdays li {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     height: 100%;
-     font-size: 1.5rem;
-     font-weight: bold;
- }
+.calendar-class-weekdays li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
- .calendar-class-day {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: space-between;
-     width: 100%;
-     height: 90%;
-     list-style: none;
-     padding: 0;
-     margin: 0;
- }
+.calendar-class-day li:hover {
+    background-color: gray;
+}
 
- .calendar-class-day li {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 14%;
-     height: 14%;
-     font-size: 1.5rem;
-     font-weight: bold;
- }
+.calendar-class-day {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 90%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
- .calendar-class-day li.calendar-class-current-month {
-     color: black;
- }
+.calendar-class-day li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 14%;
+    height: 14%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
- .calendar-class-day li.calendar-class-other-month {
-     color: lightgray;
- }
+.calendar-class-day li.calendar-class-current-month {
+    color: black;
+}
 
- .calendar-class-day li.calendar-class-today {
-     background-color: red;
- }
+.calendar-class-day li.calendar-class-other-month {
+    color: lightgray;
+}
+
+.calendar-class-day li.calendar-class-today {
+    background-color: red;
+}
+
+.calendar-class-day li span.calendar-class-daynum {
+    width: 100%;
+    align-self: normal;
+    text-align: right;
+}
